@@ -9,11 +9,12 @@ body {
     font-family: 'Silkscreen', cursive;
 }
 
+
 .grid-container {
     text-align: right;
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: repeat(4, minmax(50px, 100px));
+    grid-template-rows: repeat(8, minmax(25px, 50px));
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -22,8 +23,8 @@ body {
 }
 
 .grid-item {
-    min-width: 100px;
-    min-height: 50px;
+    justify-self: stretch;
+    align-self: stretch;
     grid-column: span 1;
     grid-row: span 1;
 }
@@ -35,6 +36,7 @@ body {
 p {
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .display {
@@ -59,12 +61,25 @@ p {
     background-color: #3B444D;
     color: #E39D22;
     border: none;
+    text-align: center;
     font-weight: 700;
     font-size: 15px;
     margin: 0;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #5e6b79;
     color: #fda102;
+}
+
+.btn:active {
+    background-color: #D5F4FF;
+    color: #111921;
+}
+
+@media (max-width:420px) {
+    .grid-container {
+        margin: 0px 10px;
+    }
 }
